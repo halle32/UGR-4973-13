@@ -1,10 +1,22 @@
 <html>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <script>
+            function validateForm() {
+                let x=document.forms["myForm"]["email"].value;
+                if (x=="") {
+                    alert("Email must be filled out");
+                    return false
+                }
+            }
+        </script>
+    </head>
     <body>
-       <header>
+       <header class="header">
         <a  href="home.html" class="logo">
             <h3>Melkam cosmotics</h3>
         </a>
-        <nav>
+        <nav class="navbar">
             <a href="home.html">home</a>
             <a href="contact.html">contact</a>
             <a href="about.html">about us</a>
@@ -13,8 +25,11 @@
             <a href="shop.html">shop</a>
         </nav>
        </header> 
+       
        <h2>login form</h2>
-       <form>
+       <div class="form-box">
+       <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+
         <label for="email">Email</label><br>
         <input type="text" id="email" name="email"><br>
         <label for="password">password</label><br>
@@ -22,8 +37,9 @@
         <input type="submit" value="login" >
         <input type="submit" value="sign up" ><br>
         <input type="submit" value="get help logging in?">
-       </form>
        
+    </form>
+       </div>
        <section class="footer">
         <div class="box-container">
             <div class="box">
@@ -35,8 +51,8 @@
                 <a href="login.html">log in</a>
                 <a href="shop.html">shop</a>
             </div>
-            <div class="credits"> "all rights reserved! december,2022 ® © "</div>
         </div>
+        <div class="credits"> "all rights reserved! december,2022 ® © "</div>
        </section>
     </body>
 </html>
